@@ -63,6 +63,14 @@ namespace SMS
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
+            app.UseGoogleAuthentication(
+         clientId: "189350415930-amfs30phatl8s1e3dgsrpomkqrmsp92f.apps.googleusercontent.com",
+         clientSecret: "eZBYrb8t8xskdX1S9w3yzrj2");
+
+            app.UseFacebookAuthentication(
+                appId: "1440588952916829",
+                appSecret: "0eec631877882b5763aa67c5888eb0d2");
         }
     }
 }

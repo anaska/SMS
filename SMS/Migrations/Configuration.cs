@@ -4,6 +4,8 @@ namespace SMS.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using SMS.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<SMS.Models.ApplicationDbContext>
@@ -27,6 +29,7 @@ namespace SMS.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            AddUserRole(context);
 
             context.Messages.AddOrUpdate(p => p.MessageId,
                 new Message
@@ -60,6 +63,33 @@ namespace SMS.Migrations
                     Body = "1 2 3, test..."
                 }
                 );
+
+            
+        }
+
+        bool AddUserRole(SMS.Models.ApplicationDbContext context)
+        {
+            IdentityResult ir;
+
+            var rm = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            ir = rm.Create(new IdentityRole("admin"));
+
+            var um = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            var user = new ApplicationUser()
+            {
+                UserName = "admin@sms.com"
+            };
+            ir = um.Create(user, "Parolamea123#");
+            if (ir.Succeeded == false)
+            {
+                return ir.Succeeded;
+            }
+
+            ir = um.AddToRole(user.Id, "admin");
+
+
+            return ir.Succeeded;
         }
     }
 }

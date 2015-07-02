@@ -10,6 +10,7 @@ using SMS.Models;
 
 namespace SMS.Controllers
 {
+    [Authorize]
     public class MessagesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
