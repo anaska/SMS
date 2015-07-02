@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS", "SMS\SMS.csproj", "{3C6ABC71-495E-4531-A789-F6D95AD3A3C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMS.Tests", "SMS.Tests\SMS.Tests.csproj", "{47D62261-D03A-4667-BBA0-24B49FBE0F23}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{B717F8CB-DA1C-4975-B893-560F68F2ECEE}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{E1294902-575C-4735-85AD-983761A12C67}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\SMS-WAWS-dev.json = PublishScripts\Configurations\SMS-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C6ABC71-495E-4531-A789-F6D95AD3A3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C6ABC71-495E-4531-A789-F6D95AD3A3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C6ABC71-495E-4531-A789-F6D95AD3A3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C6ABC71-495E-4531-A789-F6D95AD3A3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D62261-D03A-4667-BBA0-24B49FBE0F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D62261-D03A-4667-BBA0-24B49FBE0F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D62261-D03A-4667-BBA0-24B49FBE0F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D62261-D03A-4667-BBA0-24B49FBE0F23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E1294902-575C-4735-85AD-983761A12C67} = {B717F8CB-DA1C-4975-B893-560F68F2ECEE}
+	EndGlobalSection
+EndGlobal
